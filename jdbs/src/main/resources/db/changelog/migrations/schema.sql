@@ -1,8 +1,8 @@
 -- liquibase formatted sql
--- changeset vladimir:1
+
 create schema netology;
 
--- changeset vladimir:2
+
 CREATE table netology.CUSTOMERS (
 id bigserial,
 name varchar(200),
@@ -11,7 +11,7 @@ age int ,
 phone_number varchar(200),
 PRIMARY KEY (id)
 );
--- changeset vladimir:3
+
 CREATE TABLE netology.ORDERS (
 id int,
     date date,
@@ -21,13 +21,13 @@ id int,
     PRIMARY KEY (id),
     FOREIGN KEY(customer_id) REFERENCES netology.CUSTOMERS(id)
 );
--- changeset vladimir:4
+
 insert into netology.CUSTOMERS(id, name, surname, age, phone_number)
 values (1, 'Ivan', 'Ivanov', 20, '123456789'),
        (2, 'Petr', 'Petrov', 84, null),
        (3, 'Semen', 'Semenov', 23, '123456789'),
        (4, 'Alexey', 'Alexeev', 50, '987654321');
--- changeset vladimir:5
+
 insert into netology.ORDERS(id, customer_id, product_name, amount)
 values (1, 1, 'Coca-cola', 200),
        (2, 2, 'Pepsi', 250),
