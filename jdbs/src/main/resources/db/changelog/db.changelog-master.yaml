@@ -1,4 +1,6 @@
 databaseChangeLog:
-  -includeAll:
-    path: db/changelog/migrations
-    relativeToChangelogFile: true
+    - changeSet:
+        id: 1
+        author: vladimir
+        -includeAll: true
+        -include: changelog-1.xml
