@@ -1,6 +1,16 @@
 databaseChangeLog:
     - changeSet:
-        id: 1
-        author: vladimir
-        -includeAll: true
+          id: 1
+          author: artem
+          -includeAll: true
 
+
+-include:
+    file: migrations/schema.sql
+    relativeToChangelogFile: true
+
+
+
+-include:
+    file: migrations/data.sql
+    relativeToChangelogFile: true
